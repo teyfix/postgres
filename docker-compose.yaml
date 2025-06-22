@@ -1,0 +1,9 @@
+services:
+  pgrx:
+    build:
+      context: ./timescaledb-pgrx
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
