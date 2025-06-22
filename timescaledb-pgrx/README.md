@@ -57,7 +57,7 @@ Checkout [fdw.dev](https://fdw.dev/catalog/clickhouse/) for more details about
 
 Foreign data wrapper for connecting to ClickHouse databases.
 
-> [!NOTE] Handling ClickHouse Complex Types with FDW
+> [!NOTE]
 > The ClickHouse Foreign Data Wrapper (FDW) does **not support** certain
 > ClickHouse-specific data types such as `LowCardinality(String)`, `Array(T)`,
 > `JSON`, and other complex types directly. To ensure correct data retrieval,
@@ -157,7 +157,7 @@ DROP FOREIGN TABLE IF EXISTS clickhouse.users;
 
 Create custom foreign table with specific column mapping:
 
-> [!CAUTION] Incorrect data types
+> [!CAUTION]
 > Incorrect column type definitions will cause silent data corruption.
 > For example, a value like 86 stored as a Float64 might be misinterpreted as 4.6370818327779e-310 when queried, leading to confusing or invalid data results.
 
