@@ -38,16 +38,18 @@ ENV PG17_PG_CONFIG="/usr/lib/postgresql/17/bin/pg_config"
 # Install Rust
 # Current Rust version is 1.87.0 at 2025/06/12
 # --default-toolchain 1.87.0
-RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y 
+RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+
+FROM pgrx AS pgrx-wrappers
 
 # Install and initialize pgrx
 # Current pgrx version should be 0.14.3 at 2025/06/12
 # --version 0.14.3
-RUN cargo install --locked cargo-pgrx
+RUN cargo install --locked --version=0.14.3 cargo-pgrx
 RUN cargo pgrx init --pg17=${PG17_PG_CONFIG}
 
 
-FROM pgrx AS wrappers
+FROM pgrx-wrappers AS wrappers
 
 WORKDIR /home/pgrx
 
