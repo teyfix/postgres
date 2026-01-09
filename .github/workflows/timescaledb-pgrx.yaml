@@ -8,7 +8,8 @@ on:
       - "timescaledb-pgrx/**"
       - ".github/workflows/timescaledb-pgrx.yaml"
   schedule:
-    - cron: "0 2 * * *"
+    # Run at 10:00 AM UTC+3
+    - cron: "0 7 * * 1"
   workflow_dispatch:
 
 jobs:
