@@ -4,8 +4,8 @@ FROM timescale/timescaledb-ha:pg17 AS pgrx
 # see: https://github.com/supabase/wrappers/commit/eea6f87f
 ARG PGRX_VER="0.16.1"
 
-# Current Rust version is 1.87.0 at 2025/06/12
-ARG RUST_VER="1.87.0"
+# Current Rust version is 1.92.0 at 2026/01/09
+ARG RUST_VER="1.92.0"
 
 USER root
 
